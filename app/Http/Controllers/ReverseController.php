@@ -17,12 +17,12 @@ class ReverseController extends Controller
         $reverse = strrev($string);
 
         if ($reverse == $string) {
-            return redirect('/')->with('success', 'Status True = '.$reverse);
+            return redirect('/')->with('success', 'Text match = '.$reverse);
 
         }
         else
         {
-            return redirect('/')->with('warning', 'Status False = '.$reverse);
+            return redirect('/')->with('warning', 'Text does not match = '.$reverse);
         }
     }
 }
