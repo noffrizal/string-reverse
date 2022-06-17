@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ReverseController extends Controller
 {
@@ -17,12 +18,13 @@ class ReverseController extends Controller
         $reverse = strrev($string);
 
         if ($reverse == $string) {
-            return redirect('/')->with('success', 'Text match = '.$reverse);
-
+            Alert::success('True', $reverse);
+            return redirect('/');
         }
         else
         {
-            return redirect('/')->with('warning', 'Text does not match = '.$reverse);
+            Alert::error('False', $reverse);
+            return redirect('/');
         }
     }
 }
