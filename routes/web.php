@@ -19,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/',[ReverseController::class, 'index']);
+
 Route::post('/',[ReverseController::class, 'reverse'])->name('reverse');
